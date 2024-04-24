@@ -1,5 +1,5 @@
 const weakPassword = (len) => {
-  let result = '';
+  let result = "";
   for (let i = 0; i < len; i++) {
     result += String(i % 10);
   }
@@ -8,7 +8,7 @@ const weakPassword = (len) => {
 };
 
 const mediumPassword = (len) => {
-  let result = '';
+  let result = "";
   for (let i = 0; i < len; i++) {
     const digit = Math.floor(Math.random() * 10);
     result += String(digit);
@@ -18,8 +18,8 @@ const mediumPassword = (len) => {
 };
 
 const strongPassword = (len) => {
-  const chars = 'abcdefghijklmnopqrstuvwxyz0123456789_-/?';
-  let result = '';
+  const chars = "abcdefghijklmnopqrstuvwxyz0123456789_-/?";
+  let result = "";
   for (let i = 0; i < len; i++) {
     const charIndex = Math.floor(Math.random() * chars.length);
     result += chars[charIndex];
@@ -27,3 +27,11 @@ const strongPassword = (len) => {
 
   return result;
 };
+
+const createAccount = (user, generatePassword) => {
+  const password = generatePassword(9);
+
+  return `Uživatel ${user} s heslem ${password}`;
+};
+
+console.log(createAccount("Míša", strongPassword()));
