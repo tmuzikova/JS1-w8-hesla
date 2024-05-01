@@ -34,4 +34,8 @@ const createAccount = (user, generatePassword) => {
   return `Uživatel ${user} s heslem ${password}`;
 };
 
-console.log(createAccount("Míša", strongPassword()));
+document.body.innerHTML += `
+	<p>${createAccount("Míša", weakPassword)}</p>
+	<p>${createAccount("Řízek", mediumPassword)}</p>
+	<p>${createAccount("Mápodčepicí", strongPassword)}</p>
+`;
